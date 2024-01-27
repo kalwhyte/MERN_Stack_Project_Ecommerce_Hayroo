@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
+mongoose.connect("mongodb+srv://whyte:pa55w0rd@cluster0.q78gyqn.mongodb.net/",)
 
 const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
-      maxlength: 32,
+      max_length: 32,
     },
     email: {
       type: String,
@@ -44,6 +45,8 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+
 
 const userModel = mongoose.model("users", userSchema);
 module.exports = userModel;

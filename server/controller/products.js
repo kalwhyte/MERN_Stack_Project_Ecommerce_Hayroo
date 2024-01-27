@@ -62,7 +62,7 @@ class Product {
     else if (pName.length > 255 || pDescription.length > 3000) {
       Product.deleteImages(images, "file");
       return res.json({
-        error: "Name 255 & Description must not be 3000 charecter long",
+        error: "Name 255 & Description must not be 3000 character long",
       });
     }
     // Validate Images
@@ -109,7 +109,7 @@ class Product {
     } = req.body;
     let editImages = req.files;
 
-    // Validate other fileds
+    // Validate other fields
     if (
       !pId |
       !pName |
@@ -125,7 +125,7 @@ class Product {
     // Validate Name and description
     else if (pName.length > 255 || pDescription.length > 3000) {
       return res.json({
-        error: "Name 255 & Description must not be 3000 charecter long",
+        error: "Name 255 & Description must not be 3000 character long",
       });
     }
     // Validate Update Images
@@ -282,7 +282,7 @@ class Product {
       if (checkReviewRatingExists.pRatingsReviews.length > 0) {
         checkReviewRatingExists.pRatingsReviews.map((item) => {
           if (item.user === uId) {
-            return res.json({ error: "Your already reviewd the product" });
+            return res.json({ error: "Your already reviewed the product" });
           } else {
             try {
               let newRatingReview = productModel.findByIdAndUpdate(pId, {
